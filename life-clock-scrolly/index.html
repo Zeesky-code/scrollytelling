@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>24-Hour Life Clock</title>
+  <link rel="stylesheet" href="./src/styles/main.scss" />
+</head>
+
+<body>
+  <main>
+    <section id="intro">
+      <h1>The 24-Hour Life Clock</h1>
+      <p class="intro-text">
+        Time is our most limited resource. See how the world spends it.
+      </p>
+    </section>
+
+    <section id="scrolly">
+      <article>
+        <div class="step" data-step="global">
+          <h2>The 24-Hour Pie</h2>
+
+          <div class="legend">
+            <div class="legend-item"><span class="legend-dot" style="background:var(--color-sleep)"></span>Sleep</div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--color-work)"></span>Work</div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--color-leisure)"></span>Leisure
+            </div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--color-care)"></span>Care</div>
+          </div>
+
+          <p>
+            <strong class="u-sleep">Sleep</strong> (Navy) and <strong class="u-work">Work</strong> (Orange) dominate.
+            But hidden <strong class="u-care">Unpaid Work</strong> (Coral) keeps the world turning.
+          </p>
+        </div>
+        <div class="step" data-step="usa">
+          <h2>USA</h2>
+          <p>
+            The <strong class="u-work">Paid Work</strong> grind never stops, eating into personal time.
+          </p>
+        </div>
+        <div class="step" data-step="japan">
+          <h2>Japan</h2>
+          <p>
+            <strong class="u-work">Paid Work</strong> stretches well into the night.
+          </p>
+        </div>
+        <div class="step" data-step="nigeria">
+          <h2>Lagos</h2>
+          <p>
+            <strong class="u-commute">Traffic</strong> (Commute) is a part-time job here.
+          </p>
+        </div>
+        <div class="step" data-step="france">
+          <h2>France</h2>
+          <p>
+            <strong class="u-personal">Eating</strong> & <strong class="u-leisure">Leisure</strong> is a sacred ritual.
+          </p>
+        </div>
+
+        <div class="step" data-step="men">
+          <h2>Men</h2>
+          <p>
+            Mostly <strong class="u-work">Work</strong> and <strong class="u-leisure">Leisure</strong>.
+          </p>
+        </div>
+        <div class="step" data-step="women">
+          <h2>Women</h2>
+          <p>
+            <strong class="u-care">Unpaid Care</strong> explodes. The "Second Shift".
+          </p>
+        </div>
+
+        <div class="step" data-step="social_1970">
+          <h2>1970s</h2>
+          <p>
+            We spent time <strong style="color:#FD79A8">With Friends</strong>.
+          </p>
+        </div>
+        <div class="step" data-step="social_2024">
+          <h2>2024</h2>
+          <p>
+            Now, we are <strong style="color:#636E72">Alone</strong>.
+          </p>
+        </div>
+
+        <div class="step" data-step="digital">
+          <h2>Digital Shift</h2>
+          <p>
+            <strong class="u-screen">Screens</strong> have conquered our rest.
+          </p>
+        </div>
+      </article>
+
+      <figure id="clock-container">
+        <div id="clock"></div>
+        <div id="clock-center-text"></div>
+      </figure>
+    </section>
+
+    <section id="outro">
+      <p>Data: OECD Time Use Database (2022/2015), Global Digital Reports 2025.</p>
+    </section>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

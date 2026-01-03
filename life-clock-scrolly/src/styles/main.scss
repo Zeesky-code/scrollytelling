@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+
+:root {
+    /* Inviting "Editorial" Palette */
+    --color-bg: #FDFBF7;
+    /* Cream / Warm White */
+    --color-text: #2D3436;
+    /* Warm Charcoal */
+    --color-text-light: #636E72;
+    --color-accent: #E17055;
+    /* Terracotta */
+
+    --font-main: 'Outfit', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+
+    /* Category Colors (Updated) */
+    --color-sleep: #34495E;
+    --color-work: #D35400;
+    --color-leisure: #78E08F;
+    --color-care: #FAB1A0;
+    --color-screen: #9B59B6;
+    --color-commute: #E74c3c;
+    --color-personal: #3498db;
+}
+
+/* ... (Previous Body/Layout Styles keep same, just adding utilities) ... */
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+#intro,
+#outro {
+    padding: 3rem 1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.intro-text {
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+}
+
+#scrolly {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+article {
+    position: relative;
+    padding: 0 1rem;
+    max-width: 30rem;
+    margin: 0 auto;
+    pointer-events: none;
+
+    @media (min-width: 768px) {
+        margin: 0 0 0 4rem;
+        width: 35%;
+    }
+}
+
+figure {
+    position: sticky;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    background-color: var(--color-bg);
+
+    @media (min-width: 768px) {
+        height: 100vh;
+        flex: 1;
+    }
+}
+
+#clock {
+    width: 90%;
+    height: 90%;
+    max-width: 700px;
+    max-height: 700px;
+}
+
+.step {
+    margin: 0 auto 60vh auto;
+    min-height: 30vh;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    background: rgba(253, 251, 247, 0.95);
+    /* Slightly more opaque */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    pointer-events: auto;
+    opacity: 0.1;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    &.is-active {
+        opacity: 1;
+        transform: translateY(-10px);
+        border-color: var(--color-accent);
+    }
+
+    h2 {
+        font-family: var(--font-serif);
+        margin-top: 0;
+        color: var(--color-text);
+        /* Keep header neutral */
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Text Coloring Utilities */
+.u-sleep {
+    color: var(--color-sleep);
+}
+
+.u-work {
+    color: var(--color-work);
+}
+
+.u-leisure {
+    color: var(--color-leisure);
+}
+
+.u-care {
+    color: var(--color-care);
+}
+
+.u-screen {
+    color: var(--color-screen);
+}
+
+.u-commute {
+    color: var(--color-commute);
+}
+
+.u-personal {
+    color: var(--color-personal);
+}
+
+/* Legend Styles */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* D3 Styling */
+.arc path {
+    stroke: var(--color-bg);
+    stroke-width: 3px;
+    transition: fill 0.5s;
+}
+
+/* Clock Ticks */
+.tick line {
+    stroke: var(--color-text-light);
+    stroke-width: 1px;
+}
+
+.tick.major line {
+    stroke: var(--color-text);
+    stroke-width: 2px;
+}
+
+.tick text {
+    font-family: var(--font-main);
+    font-size: 14px;
+    fill: var(--color-text-light);
+}
+
+text.label {
+    fill: var(--color-text);
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 14px;
+    text-anchor: middle;
+    pointer-events: none;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
